@@ -5,7 +5,7 @@ import { abi as IERC20Minimal } from '@uniswap/v3-core/artifacts/contracts/inter
 const TOKEN = '0xab167E816E4d76089119900e941BEfdfA37d6b32';
 const TOKEN_DECIMALS = 9;
 const MULTICALL = '0x1f98415757620b543a52e61c46b32eb19261f984';
-const ADDRESS = '0x000000000000000000000000000000000000dEaD';
+const ADDRESS = '0x88C2edf8A4aF0E71b0155443C0eA2da13c5aB7F4';
 
 const provider = providers.InfuraProvider.getWebSocketProvider(
   1,
@@ -20,7 +20,7 @@ async function main() {
 
   try {
     const balanceOf = token.interface.getFunction('balanceOf');
-    const callData = token.interface.encodeFunctionData(balanceOf, [TOKEN]);
+    const callData = token.interface.encodeFunctionData(balanceOf, [ADDRESS]);
     const gasLimit = 200_000;
 
     console.log(`token address: ${TOKEN}`);
